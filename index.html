@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动漫展示网站</title>
+  <!-- 引入外部CSS文件（需和HTML放在同一文件夹下，命名为style.css） -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 页面头部 -->
+  <header class="page-header">
+    <h1>小众动漫图鉴</h1>
+    <p>精选优质动漫，点击查看全屏介绍视频</p>
+  </header>
+
+  <!-- 动漫板块容器（核心：每行8个卡片） -->
+  <main class="anime-container">
+    <!-- 动漫卡片1（可复制重复添加，修改内容即可） -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime1.mp4">
+      <img src="https://xxx.com/anime1-cover.jpg" alt="动漫封面：夏目友人帐">
+      <div class="anime-name">夏目友人帐</div>
+    </div>
+
+    <!-- 动漫卡片2 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime2.mp4">
+      <img src="https://xxx.com/anime2-cover.jpg" alt="动漫封面：萤火之森">
+      <div class="anime-name">萤火之森</div>
+    </div>
+
+    <!-- 动漫卡片3 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime3.mp4">
+      <img src="https://xxx.com/anime3-cover.jpg" alt="动漫封面：玉子市场">
+      <div class="anime-name">玉子市场</div>
+    </div>
+
+    <!-- 动漫卡片4 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime4.mp4">
+      <img src="https://xxx.com/anime4-cover.jpg" alt="动漫封面：元气少女缘结神">
+      <div class="anime-name">元气少女缘结神</div>
+    </div>
+
+    <!-- 动漫卡片5 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime5.mp4">
+      <img src="https://xxx.com/anime5-cover.jpg" alt="动漫封面：秒速5厘米">
+      <div class="anime-name">秒速5厘米</div>
+    </div>
+
+    <!-- 动漫卡片6 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime6.mp4">
+      <img src="https://xxx.com/anime6-cover.jpg" alt="动漫封面：言叶之庭">
+      <div class="anime-name">言叶之庭</div>
+    </div>
+
+    <!-- 动漫卡片7 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime7.mp4">
+      <img src="https://xxx.com/anime7-cover.jpg" alt="动漫封面：哈尔的移动城堡">
+      <div class="anime-name">哈尔的移动城堡</div>
+    </div>
+
+    <!-- 动漫卡片8 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime8.mp4">
+      <img src="https://xxx.com/anime8-cover.jpg" alt="动漫封面：千与千寻">
+      <div class="anime-name">千与千寻</div>
+    </div>
+
+    <!-- 第二行卡片（可继续复制添加，保持布局整齐） -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime9.mp4">
+      <img src="https://xxx.com/anime9-cover.jpg" alt="动漫封面：龙猫">
+      <div class="anime-name">龙猫</div>
+    </div>
+
+    <div class="anime-card" data-video-src="https://xxx.com/anime10.mp4">
+      <img src="https://xxx.com/anime10-cover.jpg" alt="动漫封面：魔女宅急便">
+      <div class="anime-name">魔女宅急便</div>
+    </div>
+  </main>
+
+  <!-- 全屏视频弹窗（默认隐藏，点击卡片后显示） -->
+  <div class="video-modal" id="video-modal">
+    <div class="modal-content">
+      <!-- 关闭按钮 -->
+      <button class="close-btn" id="close-btn">×</button>
+      <!-- 动漫标题 -->
+      <h2 class="modal-anime-title" id="anime-title"></h2>
+      <!-- 全屏视频播放区域 -->
+      <video class="fullscreen-video" id="fullscreen-video" controls autoplay></video>
+    </div>
+  </div>
+
+  <!-- 引入JavaScript（后续可补充交互逻辑，当前先保留结构） -->
+  <script src="script.js"></script>
+</body>
+</html>
