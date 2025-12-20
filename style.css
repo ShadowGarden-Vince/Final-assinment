@@ -1,5 +1,4 @@
-
-/* 全局样式重置：消除默认边距和内边距，统一字体 */
+/* 全局样式重置：消除默认边距，确保页面铺满无留白 */
 * {
   margin: 0;
   padding: 0;
@@ -7,20 +6,27 @@
   font-family: "Microsoft Yahei", sans-serif;
 }
 
-/* 页面背景样式 */
-body {
+/* html和body设置：确保高度自适应，支持纵向滚动 */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* 隐藏横向滚动条，确保纵向滚动纯净 */
   background-color: #f5f5f7;
   color: #333;
-  min-height: 100vh;
 }
 
-/* 页面头部样式 */
+/* 页面头部：横向铺满整个屏幕，无左右留白 */
 .page-header {
+  width: 100%;
   text-align: center;
   padding: 30px 0;
   background-color: #2c3e50;
   color: #fff;
   margin-bottom: 20px;
+  /* 确保头部铺满，无额外间距 */
+  position: relative;
+  left: 0;
+  top: 0;
 }
 
 .page-header h1 {
@@ -33,77 +39,79 @@ body {
   opacity: 0.8;
 }
 
-/* 核心：动漫板块容器 - 实现每行8个布局 */
+/* 核心：动漫板块容器 - 横向铺满页面，纵向自动延伸产生滚动 */
 .anime-container {
-  width: 95%;
-  max-width: 1400px; /* 限制最大宽度，避免大屏下板块过宽 */
-  margin: 0 auto;
+  width: 100%; /* 改为100%，横向铺满整个页面 */
+  padding: 0 10px 40px; /* 左右仅留10px内边距，底部留间距，无上下外边距 */
+  margin: 0 auto; /* 居中对齐，确保铺满后左右对称 */
   display: grid;
-  /* 每行8个等宽板块，间距15px */
+  /* 每行8个等宽板块，间距12px，紧密排列铺满横向 */
   grid-template-columns: repeat(8, 1fr);
-  grid-gap: 15px; /* 板块之间的间距（水平+垂直） */
-  padding: 10px 0 40px;
+  grid-gap: 12px; /* 缩小间距，让板块更紧密，铺满页面 */
+  /* 不限制最大宽度，确保大屏下也能铺满 */
 }
 
-/* 单个动漫卡片样式 */
+/* 单个动漫卡片：填满网格分配的空间，无多余留白 */
 .anime-card {
   width: 100%;
-  border-radius: 10px;
-  overflow: hidden; /* 隐藏封面超出圆角的部分 */
+  height: 100%; /* 高度自适应，填满网格单元格 */
+  border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   cursor: pointer;
-  transition: all 0.3s ease-in-out; /* 流畅过渡动画 */
+  transition: all 0.3s ease-in-out;
 }
 
-/* 卡片hover效果：上移+加深阴影，提升交互体验 */
+/* 卡片hover效果：保持美观，不影响铺满布局 */
 .anime-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* 动漫封面图样式：固定高度，保持比例不变形 */
+/* 动漫封面图：填满卡片宽度，固定高度确保排版整齐，铺满卡片上部 */
 .anime-card img {
   width: 100%;
-  height: 190px; /* 统一封面高度，保证布局整齐 */
-  object-fit: cover; /* 覆盖裁剪，保留核心画面 */
-  display: block; /* 消除图片下方默认空白 */
+  height: 180px; /* 适配铺满布局，略调整高度 */
+  object-fit: cover;
+  display: block; /* 消除图片下方空白，确保铺满 */
 }
 
-/* 动漫名称文字样式 */
+/* 动漫名称文字：填满卡片下部，无多余留白 */
 .anime-name {
   padding: 12px 8px;
   text-align: center;
   font-size: 14px;
   font-weight: 500;
   color: #2c3e50;
-  white-space: nowrap; /* 文字不换行 */
-  overflow: hidden; /* 隐藏超出部分 */
-  text-overflow: ellipsis; /* 超出部分显示省略号 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%; /* 文字容器铺满卡片宽度 */
+  background-color: #f8f8f8;
 }
 
-/* 视频弹窗样式：全屏覆盖，默认隐藏 */
+/* 视频弹窗：全屏覆盖，不影响页面滚动逻辑 */
 .video-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* 半透明黑色背景 */
-  display: none; /* 默认隐藏 */
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
   justify-content: center;
   align-items: center;
-  z-index: 999; /* 确保在页面最上层 */
+  z-index: 999;
+  /* 弹窗层级最高，不影响页面滚动（关闭弹窗后恢复滚动） */
 }
 
-/* 弹窗内容容器 */
 .modal-content {
-  width: 90%;
-  max-width: 1200px;
+  width: 95%; /* 弹窗内容横向铺满大部分屏幕 */
+  max-width: 1300px;
   position: relative;
 }
 
-/* 关闭按钮样式 */
 .close-btn {
   position: absolute;
   top: -40px;
@@ -126,7 +134,6 @@ body {
   background-color: #c0392b;
 }
 
-/* 弹窗内动漫标题 */
 .modal-anime-title {
   color: #fff;
   text-align: center;
@@ -134,64 +141,75 @@ body {
   font-size: 1.5rem;
 }
 
-/* 全屏视频样式 */
+/* 全屏视频：铺满弹窗内容宽度，适配不同屏幕 */
 .fullscreen-video {
   width: 100%;
   height: auto;
-  max-height: 80vh; /* 限制视频最大高度，避免超出屏幕 */
+  max-height: 80vh;
   border-radius: 8px;
   background-color: #000;
+  /* 视频铺满容器，无多余留白 */
+  object-fit: contain;
 }
 
-/* 响应式适配：不同屏幕尺寸调整每行板块数量 */
-/* 大屏电脑（小于1400px）：每行7个 */
+/* 响应式适配：不同屏幕下调整每行板块数量，保持铺满效果 */
+/* 大屏电脑（小于1400px）：每行7个，依然铺满 */
 @media (max-width: 1400px) {
   .anime-container {
     grid-template-columns: repeat(7, 1fr);
   }
 }
 
-/* 中屏电脑/平板横屏（小于1200px）：每行6个 */
+/* 中屏电脑/平板横屏（小于1200px）：每行6个，铺满屏幕 */
 @media (max-width: 1200px) {
   .anime-container {
     grid-template-columns: repeat(6, 1fr);
   }
-}
-
-/* 平板竖屏/手机横屏（小于768px）：每行3个 */
-@media (max-width: 768px) {
-  .anime-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .page-header h1 {
     font-size: 1.8rem;
   }
-
   .modal-anime-title {
     font-size: 1.2rem;
   }
 }
 
-/* 手机竖屏（小于480px）：每行2个 */
-@media (max-width: 480px) {
+/* 平板竖屏/手机横屏（小于768px）：每行3个，铺满屏幕 */
+@media (max-width: 768px) {
   .anime-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
   }
-
   .anime-card img {
     height: 160px;
   }
-
   .page-header h1 {
     font-size: 1.5rem;
   }
-
   .close-btn {
     top: -35px;
     width: 32px;
     height: 32px;
     font-size: 18px;
+  }
+}
+
+/* 手机竖屏（小于480px）：每行2个，铺满屏幕 */
+@media (max-width: 480px) {
+  .anime-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px;
+    padding: 0 5px 30px;
+  }
+  .anime-card img {
+    height: 140px;
+  }
+  .page-header {
+    padding: 20px 0;
+  }
+  .page-header h1 {
+    font-size: 1.3rem;
+  }
+  .modal-content {
+    width: 98%;
   }
 }
