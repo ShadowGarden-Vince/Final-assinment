@@ -8,15 +8,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 页面头部（整体加宽变大，视觉更醒目） -->
+  <!-- 页面头部（整体进一步变大，视觉更醒目震撼） -->
   <header class="page-header">
     <h1>小众动漫图鉴</h1>
     <p>精选优质动漫，点击查看全屏介绍视频（滚轮下滑查看更多）</p>
   </header>
 
-  <!-- 动漫板块容器（核心：一行6个+模块放大） -->
+  <!-- 动漫板块容器（核心：一行5个+模块再放大） -->
   <main class="anime-container">
-    <!-- 第1行：6个动漫卡片 -->
+    <!-- 第1行：5个动漫卡片 -->
     <div class="anime-card" data-video-src="https://xxx.com/anime1.mp4">
       <img src="https://xxx.com/anime1-cover.jpg" alt="动漫封面：夏目友人帐">
       <div class="anime-name">夏目友人帐</div>
@@ -37,12 +37,12 @@
       <img src="https://xxx.com/anime5-cover.jpg" alt="动漫封面：秒速5厘米">
       <div class="anime-name">秒速5厘米</div>
     </div>
+
+    <!-- 第2行：5个动漫卡片 -->
     <div class="anime-card" data-video-src="https://xxx.com/anime6.mp4">
       <img src="https://xxx.com/anime6-cover.jpg" alt="动漫封面：言叶之庭">
       <div class="anime-name">言叶之庭</div>
     </div>
-
-    <!-- 第2行：6个动漫卡片 -->
     <div class="anime-card" data-video-src="https://xxx.com/anime7.mp4">
       <img src="https://xxx.com/anime7-cover.jpg" alt="动漫封面：哈尔的移动城堡">
       <div class="anime-name">哈尔的移动城堡</div>
@@ -59,6 +59,8 @@
       <img src="https://xxx.com/anime10-cover.jpg" alt="动漫封面：魔女宅急便">
       <div class="anime-name">魔女宅急便</div>
     </div>
+
+    <!-- 第3行：5个动漫卡片 -->
     <div class="anime-card" data-video-src="https://xxx.com/anime11.mp4">
       <img src="https://xxx.com/anime11-cover.jpg" alt="动漫封面：悬崖上的金鱼姬">
       <div class="anime-name">悬崖上的金鱼姬</div>
@@ -67,8 +69,6 @@
       <img src="https://xxx.com/anime12-cover.jpg" alt="动漫封面：起风了">
       <div class="anime-name">起风了</div>
     </div>
-
-    <!-- 第3行：6个动漫卡片（确保内容超出视口，产生滚轮滚动） -->
     <div class="anime-card" data-video-src="https://xxx.com/anime13.mp4">
       <img src="https://xxx.com/anime13-cover.jpg" alt="动漫封面：你的名字">
       <div class="anime-name">你的名字</div>
@@ -81,6 +81,8 @@
       <img src="https://xxx.com/anime15-cover.jpg" alt="动漫封面：铃芽之旅">
       <div class="anime-name">铃芽之旅</div>
     </div>
+
+    <!-- 第4行：5个动漫卡片 -->
     <div class="anime-card" data-video-src="https://xxx.com/anime16.mp4">
       <img src="https://xxx.com/anime16-cover.jpg" alt="动漫封面：声之形">
       <div class="anime-name">声之形</div>
@@ -93,8 +95,6 @@
       <img src="https://xxx.com/anime18-cover.jpg" alt="动漫封面：红辣椒">
       <div class="anime-name">红辣椒</div>
     </div>
-
-    <!-- 第4行：6个动漫卡片（滚动效果更明显，可按需增减） -->
     <div class="anime-card" data-video-src="https://xxx.com/anime19.mp4">
       <img src="https://xxx.com/anime19-cover.jpg" alt="动漫封面：幽灵公主">
       <div class="anime-name">幽灵公主</div>
@@ -103,6 +103,8 @@
       <img src="https://xxx.com/anime20-cover.jpg" alt="动漫封面：风之谷">
       <div class="anime-name">风之谷</div>
     </div>
+
+    <!-- 第5行：5个动漫卡片（确保滚动效果明显，可按需增减） -->
     <div class="anime-card" data-video-src="https://xxx.com/anime21.mp4">
       <img src="https://xxx.com/anime21-cover.jpg" alt="动漫封面：猫的报恩">
       <div class="anime-name">猫的报恩</div>
@@ -119,9 +121,13 @@
       <img src="https://xxx.com/anime24-cover.jpg" alt="动漫封面：朝花夕誓">
       <div class="anime-name">朝花夕誓</div>
     </div>
+    <div class="anime-card" data-video-src="https://xxx.com/anime25.mp4">
+      <img src="https://xxx.com/anime25-cover.jpg" alt="动漫封面：崖上的波妞">
+      <div class="anime-name">崖上的波妞</div>
+    </div>
   </main>
 
-  <!-- 全屏视频弹窗（默认隐藏） -->
+  <!-- 全屏视频弹窗（默认隐藏，适配整体放大风格） -->
   <div class="video-modal" id="video-modal">
     <div class="modal-content">
       <button class="close-btn" id="close-btn">×</button>
