@@ -1,4 +1,4 @@
-/* 基础样式重置 */
+/* 基础样式重置与全局设置 */
 * {
   margin: 0;
   padding: 0;
@@ -12,98 +12,35 @@ body {
   line-height: 1.6;
 }
 
-/* 动漫风格头部样式 */
+/* 页面头部样式 */
 .page-header {
-  position: relative;
-  padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #2d1b69 0%, #4a2673 50%, #2d1b69 100%);
-  overflow: hidden;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-bottom: 30px;
 }
 
-/* 头部装饰元素 */
-.anime-header-decoration {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-around;
-  color: #ffd700;
-  font-size: 1.5rem;
-  opacity: 0.8;
-  animation: float 6s ease-in-out infinite;
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.page-header p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
 }
 
-.decor-moon {
-  animation-delay: 2s;
-}
-
-/* 主标题样式 */
-.anime-title-main {
-  position: relative;
-  font-size: 3.5rem;
-  color: #fff;
-  text-shadow: 0 0 10px #ff6ec7, 0 0 20px rgba(255, 110, 199, 0.5);
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-  animation: fadeIn 1.5s ease-out;
-}
-
-/* 副标题样式 */
-.anime-subtitle {
-  color: #f0e6ff;
-  font-size: 1.3rem;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 40px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 2s ease-out;
-}
-
-.anime-subtitle br {
-  display: none;
-}
-
-/* 滚动指示器 */
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  font-size: 1rem;
-  text-align: center;
-  animation: pulse 2s infinite;
-}
-
-.scroll-icon {
-  font-size: 1.5rem;
-  margin-top: 5px;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; transform: scale(1.1); }
-}
-
-/* 动漫卡片容器 */
+/* 动漫容器：自适应铺满全屏 */
 .anime-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
-  padding: 40px 20px;
-  max-width: 1400px;
+  padding: 0 20px 50px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -118,6 +55,7 @@ body {
   transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
+  aspect-ratio: 2/3; /* 固定竖版比例 */
 }
 
 /* 卡片hover效果 */
@@ -126,26 +64,24 @@ body {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* 动漫封面图 */
+/* 动漫封面图样式 */
 .anime-card img {
   width: 100%;
-  height: 350px;
+  height: 100%;
   object-fit: cover;
   display: block;
   flex: 1;
 }
 
-/* 动漫名称 */
+/* 动漫名称样式 */
 .anime-name {
-  padding: 15px;
-  font-size: 16px;
+  padding: 12px 10px;
   font-weight: 600;
   text-align: center;
-  background-color: #fff;
-  color: #333;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  background-color: #fff;
 }
 
 /* 视频弹窗样式 */
@@ -164,24 +100,25 @@ body {
 }
 
 .modal-content {
-  position: relative;
   width: 90%;
   max-width: 1200px;
+  position: relative;
 }
 
 .fullscreen-video {
   width: 100%;
   height: auto;
+  max-height: 85vh;
   border-radius: 8px;
 }
 
 .close-btn {
   position: absolute;
-  top: -50px;
+  top: -60px;
   right: 0;
   width: 45px;
   height: 45px;
-  background-color: #ff3366;
+  background-color: #ff4d4d;
   color: white;
   border: none;
   border-radius: 50%;
@@ -190,11 +127,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .close-btn:hover {
+  background-color: #ff3333;
   transform: scale(1.1);
 }
 
@@ -205,76 +142,75 @@ body {
   text-align: center;
 }
 
-/* 响应式设计 - 平板横屏（768px-1024px） */
-@media (max-width: 1024px) {
-  .anime-container {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 18px;
-  }
-  .anime-card img {
-    height: 300px;
-  }
-}
-
-/* 平板竖屏（小于768px） */
+/* 平板设备适配（768px以下） */
 @media (max-width: 768px) {
   .anime-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     grid-gap: 15px;
     padding: 0 15px 50px;
   }
+  
   .anime-card img {
-    height: 260px;
+    height: auto; /* 配合aspect-ratio自动调整 */
   }
+  
   .anime-name {
     font-size: 14px;
-    height: 45px;
+    padding: 10px 8px;
   }
+  
   .page-header {
     padding: 45px 0;
   }
-  .anime-title-main {
+  
+  .page-header h1 {
     font-size: 2.4rem;
   }
+  
   .modal-content {
     width: 98%;
   }
+  
   .modal-anime-title {
     font-size: 1.6rem;
   }
+  
   .close-btn {
     width: 40px;
     height: 40px;
     font-size: 24px;
     top: -50px;
   }
-  .anime-subtitle br {
-    display: block;
-  }
 }
 
-/* 手机竖屏（小于480px） */
+/* 手机设备适配（480px以下） */
 @media (max-width: 480px) {
   .anime-container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     grid-gap: 12px;
     padding: 0 10px 40px;
   }
-  .anime-card img {
-    height: 280px;
+  
+  .anime-name {
+    font-size: 13px;
   }
+  
   .page-header {
     padding: 35px 0;
   }
-  .anime-title-main {
+  
+  .page-header h1 {
     font-size: 2rem;
   }
-  .anime-subtitle {
+  
+  .page-header p {
     font-size: 1.1rem;
   }
+  
   .modal-anime-title {
     font-size: 1.4rem;
   }
+  
   .close-btn {
     width: 36px;
     height: 36px;
