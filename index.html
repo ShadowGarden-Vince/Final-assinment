@@ -3,20 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>动漫展示网站</title>
-  <!-- 引入外部CSS文件（与HTML同文件夹，命名为style.css） -->
+  <title>小众动漫图鉴</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 页面头部（保持超大尺寸，视觉醒目） -->
+  <!-- 动漫风格头部 -->
   <header class="page-header">
-    <h1>小众动漫图鉴</h1>
-    <p>精选优质动漫，点击查看全屏介绍视频（滚轮下滑查看更多）</p>
+    <div class="anime-header-decoration">
+      <span class="decor-star">★</span>
+      <span class="decor-moon">☽</span>
+      <span class="decor-star">★</span>
+    </div>
+    <h1 class="anime-title-main">小众动漫图鉴</h1>
+    <p class="anime-subtitle">
+      漫游次元缝隙里的宝藏<br>
+      点击卡片，解锁全屏心动瞬间 ✦
+    </p>
+    <div class="scroll-indicator">
+      <span>向下探索</span>
+      <div class="scroll-icon">▼</div>
+    </div>
   </header>
 
-  <!-- 动漫板块容器（核心：一行5个+竖版模块） -->
+  <!-- 动漫卡片容器 -->
   <main class="anime-container">
-    <!-- 第1行：5个竖版动漫卡片 -->
+    <!-- 第1行卡片 -->
     <div class="anime-card" data-video-src="https://xxx.com/anime1.mp4">
       <img src="https://xxx.com/anime1-cover.jpg" alt="动漫封面：夏目友人帐">
       <div class="anime-name">夏目友人帐</div>
@@ -38,7 +49,7 @@
       <div class="anime-name">秒速5厘米</div>
     </div>
 
-    <!-- 第2行：5个竖版动漫卡片 -->
+    <!-- 第2行卡片 -->
     <div class="anime-card" data-video-src="https://xxx.com/anime6.mp4">
       <img src="https://xxx.com/anime6-cover.jpg" alt="动漫封面：言叶之庭">
       <div class="anime-name">言叶之庭</div>
@@ -60,7 +71,7 @@
       <div class="anime-name">魔女宅急便</div>
     </div>
 
-    <!-- 第3行：5个竖版动漫卡片 -->
+    <!-- 第3行卡片 -->
     <div class="anime-card" data-video-src="https://xxx.com/anime11.mp4">
       <img src="https://xxx.com/anime11-cover.jpg" alt="动漫封面：悬崖上的金鱼姬">
       <div class="anime-name">悬崖上的金鱼姬</div>
@@ -82,7 +93,7 @@
       <div class="anime-name">铃芽之旅</div>
     </div>
 
-    <!-- 第4行：5个竖版动漫卡片 -->
+    <!-- 第4行卡片 -->
     <div class="anime-card" data-video-src="https://xxx.com/anime16.mp4">
       <img src="https://xxx.com/anime16-cover.jpg" alt="动漫封面：声之形">
       <div class="anime-name">声之形</div>
@@ -104,7 +115,7 @@
       <div class="anime-name">风之谷</div>
     </div>
 
-    <!-- 第5行：5个竖版动漫卡片（确保滚动效果明显） -->
+    <!-- 第5行卡片 -->
     <div class="anime-card" data-video-src="https://xxx.com/anime21.mp4">
       <img src="https://xxx.com/anime21-cover.jpg" alt="动漫封面：猫的报恩">
       <div class="anime-name">猫的报恩</div>
@@ -127,7 +138,7 @@
     </div>
   </main>
 
-  <!-- 全屏视频弹窗（适配竖版模块风格） -->
+  <!-- 全屏视频弹窗 -->
   <div class="video-modal" id="video-modal">
     <div class="modal-content">
       <button class="close-btn" id="close-btn">×</button>
@@ -136,7 +147,6 @@
     </div>
   </div>
 
-  <!-- 引入JavaScript（无需修改，兼容竖版布局） -->
   <script src="script.js"></script>
 </body>
 </html>
