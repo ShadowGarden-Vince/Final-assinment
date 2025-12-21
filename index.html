@@ -3,102 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小众动漫图鉴 - 清晰流畅播放</title>
-  <!-- 引入CSS样式 -->
+  <title>动漫展示网站</title>
+  <!-- 引入外部CSS文件（与HTML同文件夹，命名为style.css） -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 页面头部 -->
+  <!-- 页面头部（保持超大尺寸，视觉醒目） -->
   <header class="page-header">
     <h1>小众动漫图鉴</h1>
-    <p>精选优质动漫 | 清晰画质 · 流畅播放</p>
+    <p>精选优质动漫，点击查看全屏介绍视频（滚轮下滑查看更多）</p>
   </header>
 
-  <!-- 动漫卡片容器（一行5个，竖版模块） -->
+  <!-- 动漫板块容器（核心：一行5个+竖版模块） -->
   <main class="anime-container">
-    <!-- 第1行动漫卡片 -->
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1xx411c7mK&page=1&autoplay=1">
-      <img src="anime1-cover.webp" alt="动漫封面：夏目友人帐">
+    <!-- 第1行：5个竖版动漫卡片 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime1.mp4">
+      <img src="https://xxx.com/anime1-cover.jpg" alt="动漫封面：夏目友人帐">
       <div class="anime-name">夏目友人帐</div>
     </div>
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1sx411c7Vn&page=1&autoplay=1">
-      <img src="anime2-cover.webp" alt="动漫封面：萤火之森">
+    <div class="anime-card" data-video-src="https://xxx.com/anime2.mp4">
+      <img src="https://xxx.com/anime2-cover.jpg" alt="动漫封面：萤火之森">
       <div class="anime-name">萤火之森</div>
     </div>
     <div class="anime-card" data-video-src="你的名字.mp4">
       <img src="你的名字.jpg" alt="动漫封面：你的名字">
       <div class="anime-name">玉子市场</div>
     </div>
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1fx411c7Pn&page=1&autoplay=1">
-      <img src="anime4-cover.webp" alt="动漫封面：元气少女缘结神">
+    <div class="anime-card" data-video-src="https://xxx.com/anime4.mp4">
+      <img src="https://xxx.com/anime4-cover.jpg" alt="动漫封面：元气少女缘结神">
       <div class="anime-name">元气少女缘结神</div>
     </div>
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1bx411c7Xn&page=1&autoplay=1">
-      <img src="anime5-cover.webp" alt="动漫封面：秒速5厘米">
+    <div class="anime-card" data-video-src="https://xxx.com/anime5.mp4">
+      <img src="https://xxx.com/anime5-cover.jpg" alt="动漫封面：秒速5厘米">
       <div class="anime-name">秒速5厘米</div>
     </div>
 
-    <!-- 第2行动漫卡片 -->
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1xx411c7mK&page=1&autoplay=1">
-      <img src="anime6-cover.webp" alt="动漫封面：言叶之庭">
+    <!-- 第2行：5个竖版动漫卡片 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime6.mp4">
+      <img src="https://xxx.com/anime6-cover.jpg" alt="动漫封面：言叶之庭">
       <div class="anime-name">言叶之庭</div>
     </div>
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1sx411c7Vn&page=1&autoplay=1">
-      <img src="anime7-cover.webp" alt="动漫封面：哈尔的移动城堡">
+    <div class="anime-card" data-video-src="https://xxx.com/anime7.mp4">
+      <img src="https://xxx.com/anime7-cover.jpg" alt="动漫封面：哈尔的移动城堡">
       <div class="anime-name">哈尔的移动城堡</div>
     </div>
     <div class="anime-card" data-video-src="我想吃掉你的胰脏.mp4">
       <img src="我想吃掉你的胰脏.jpg" alt="动漫封面：我想吃掉你的胰脏">
       <div class="anime-name">千与千寻</div>
     </div>
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1fx411c7Pn&page=1&autoplay=1">
-      <img src="anime9-cover.webp" alt="动漫封面：龙猫">
+    <div class="anime-card" data-video-src="https://xxx.com/anime9.mp4">
+      <img src="https://xxx.com/anime9-cover.jpg" alt="动漫封面：龙猫">
       <div class="anime-name">龙猫</div>
     </div>
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1bx411c7Xn&page=1&autoplay=1">
-      <img src="anime10-cover.webp" alt="动漫封面：魔女宅急便">
+    <div class="anime-card" data-video-src="https://xxx.com/anime10.mp4">
+      <img src="https://xxx.com/anime10-cover.jpg" alt="动漫封面：魔女宅急便">
       <div class="anime-name">魔女宅急便</div>
     </div>
 
-    <!-- 第3行动漫卡片（可按需增减） -->
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1xx411c7mK&page=1&autoplay=1">
-      <img src="anime11-cover.webp" alt="动漫封面：悬崖上的金鱼姬">
+    <!-- 第3行：5个竖版动漫卡片 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime11.mp4">
+      <img src="https://xxx.com/anime11-cover.jpg" alt="动漫封面：悬崖上的金鱼姬">
       <div class="anime-name">悬崖上的金鱼姬</div>
     </div>
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1sx411c7Vn&page=1&autoplay=1">
-      <img src="anime12-cover.webp" alt="动漫封面：起风了">
+    <div class="anime-card" data-video-src="https://xxx.com/anime12.mp4">
+      <img src="https://xxx.com/anime12-cover.jpg" alt="动漫封面：起风了">
       <div class="anime-name">起风了</div>
     </div>
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1tx411c7Ry&page=1&autoplay=1">
-      <img src="anime13-cover.webp" alt="动漫封面：你的名字">
+    <div class="anime-card" data-video-src="https://xxx.com/anime13.mp4">
+      <img src="https://xxx.com/anime13-cover.jpg" alt="动漫封面：你的名字">
       <div class="anime-name">你的名字</div>
     </div>
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1fx411c7Pn&page=1&autoplay=1">
-      <img src="anime14-cover.webp" alt="动漫封面：天气之子">
+    <div class="anime-card" data-video-src="https://xxx.com/anime14.mp4">
+      <img src="https://xxx.com/anime14-cover.jpg" alt="动漫封面：天气之子">
       <div class="anime-name">天气之子</div>
     </div>
-    <div class="anime-card" data-video-src="https://player.bilibili.com/player.html?bvid=BV1bx411c7Xn&page=1&autoplay=1">
-      <img src="anime15-cover.webp" alt="动漫封面：铃芽之旅">
+    <div class="anime-card" data-video-src="https://xxx.com/anime15.mp4">
+      <img src="https://xxx.com/anime15-cover.jpg" alt="动漫封面：铃芽之旅">
       <div class="anime-name">铃芽之旅</div>
+    </div>
+
+    <!-- 第4行：5个竖版动漫卡片 -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime16.mp4">
+      <img src="https://xxx.com/anime16-cover.jpg" alt="动漫封面：声之形">
+      <div class="anime-name">声之形</div>
+    </div>
+    <div class="anime-card" data-video-src="https://xxx.com/anime17.mp4">
+      <img src="https://xxx.com/anime17-cover.jpg" alt="动漫封面：未麻的部屋">
+      <div class="anime-name">未麻的部屋</div>
+    </div>
+    <div class="anime-card" data-video-src="https://xxx.com/anime18.mp4">
+      <img src="https://xxx.com/anime18-cover.jpg" alt="动漫封面：红辣椒">
+      <div class="anime-name">红辣椒</div>
+    </div>
+    <div class="anime-card" data-video-src="https://xxx.com/anime19.mp4">
+      <img src="https://xxx.com/anime19-cover.jpg" alt="动漫封面：幽灵公主">
+      <div class="anime-name">幽灵公主</div>
+    </div>
+    <div class="anime-card" data-video-src="https://xxx.com/anime20.mp4">
+      <img src="https://xxx.com/anime20-cover.jpg" alt="动漫封面：风之谷">
+      <div class="anime-name">风之谷</div>
+    </div>
+
+    <!-- 第5行：5个竖版动漫卡片（确保滚动效果明显） -->
+    <div class="anime-card" data-video-src="https://xxx.com/anime21.mp4">
+      <img src="https://xxx.com/anime21-cover.jpg" alt="动漫封面：猫的报恩">
+      <div class="anime-name">猫的报恩</div>
+    </div>
+    <div class="anime-card" data-video-src="https://xxx.com/anime22.mp4">
+      <img src="https://xxx.com/anime22-cover.jpg" alt="动漫封面：侧耳倾听">
+      <div class="anime-name">侧耳倾听</div>
+    </div>
+    <div class="anime-card" data-video-src="https://xxx.com/anime23.mp4">
+      <img src="https://xxx.com/anime23-cover.jpg" alt="动漫封面：萤火之森">
+      <div class="anime-name">萤火之森</div>
+    </div>
+    <div class="anime-card" data-video-src="https://xxx.com/anime24.mp4">
+      <img src="https://xxx.com/anime24-cover.jpg" alt="动漫封面：朝花夕誓">
+      <div class="anime-name">朝花夕誓</div>
+    </div>
+    <div class="anime-card" data-video-src="https://xxx.com/anime25.mp4">
+      <img src="https://xxx.com/anime25-cover.jpg" alt="动漫封面：崖上的波妞">
+      <div class="anime-name">崖上的波妞</div>
     </div>
   </main>
 
-  <!-- 视频播放弹窗（使用iframe嵌入第三方平台，保证清晰流畅） -->
+  <!-- 全屏视频弹窗（适配竖版模块风格） -->
   <div class="video-modal" id="video-modal">
     <div class="modal-content">
       <button class="close-btn" id="close-btn">×</button>
       <h2 class="modal-anime-title" id="anime-title"></h2>
-      <iframe 
-        class="fullscreen-video" 
-        id="fullscreen-video" 
-        frameborder="0" 
-        allowfullscreen="true" 
-        allow="autoplay; encrypted-media; picture-in-picture"
-      ></iframe>
+      <video class="fullscreen-video" id="fullscreen-video" controls autoplay></video>
     </div>
   </div>
 
-  <!-- 引入JS脚本 -->
+  <!-- 引入JavaScript（无需修改，兼容竖版布局） -->
   <script src="script.js"></script>
 </body>
 </html>

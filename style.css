@@ -1,202 +1,194 @@
-/* 全局样式重置 - 消除默认边距和样式 */
+/* 全局样式重置：消除默认边距，确保页面铺满无留白 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Microsoft Yahei", "PingFang SC", sans-serif;
+  font-family: "Microsoft Yahei", sans-serif;
 }
 
-/* 页面基础样式 */
+/* html和body设置：确保高度自适应，支持纵向滚动 */
 html, body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
-  background-color: #f8f9fa;
+  overflow-x: hidden; /* 隐藏横向滚动条，确保纵向滚动纯净 */
+  background-color: #f5f5f7;
   color: #333;
-  scroll-behavior: smooth; /* 平滑滚动 */
 }
 
-/* 页面头部样式 - 超大尺寸，视觉醒目 */
+/* 页面头部：保持超大尺寸，视觉醒目震撼 */
 .page-header {
-  width: 100%;
+  width: 100%; /* 横向铺满整个屏幕 */
   text-align: center;
-  padding: 60px 0;
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-  color: #ffffff;
-  margin-bottom: 40px;
+  padding: 60px 0; /* 超大上下内边距，头部高大醒目 */
+  background-color: #2c3e50;
+  color: #fff;
+  margin-bottom: 40px; /* 加大与下方板块间距 */
   position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  left: 0;
+  top: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* 加深阴影提升立体感 */
 }
 
 .page-header h1 {
-  font-size: 3.8rem;
+  font-size: 3.8rem; /* 超大标题字体，视觉冲击力强 */
   margin-bottom: 20px;
-  letter-spacing: 3px;
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 3px; /* 增加字间距更舒展 */
+  font-weight: 700; /* 加粗字体更醒目 */
 }
 
 .page-header p {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* 放大副标题字体 */
   opacity: 0.95;
   letter-spacing: 2px;
-  line-height: 1.5;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 1.5; /* 增加行高提升可读性 */
 }
 
-/* 动漫卡片容器 - 一行5个，铺满页面 */
+/* 核心：动漫板块容器 - 一行5个，适配竖版模块布局 */
 .anime-container {
-  width: 95%;
-  max-width: 1920px;
-  margin: 0 auto 60px;
+  width: 100%; /* 横向铺满整个页面 */
+  padding: 0 20px 60px; /* 加大内边距避免拥挤 */
+  margin: 0 auto; /* 居中对齐 */
   display: grid;
+  /* 一行5个等宽板块，合理间距适配竖版模块 */
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 25px;
-  padding: 0 10px;
+  grid-gap: 20px; /* 竖版模块间距略调整，避免纵向拥挤 */
+  /* 不限制最大宽度，确保大屏下铺满 */
 }
 
-/* 竖版动漫卡片样式 - 核心样式 */
+/* 单个动漫卡片：核心修改 - 实现竖版形态（高度远大于宽度） */
 .anime-card {
   width: 100%;
-  border-radius: 18px;
+  /* 竖版关键：通过固定宽高比或大幅提高高度实现竖版，这里用封面高度主导 */
+  border-radius: 15px; /* 圆角保持美观 */
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s ease-in-out;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* 纵向排列封面和文字，强化竖版结构 */
 }
 
-/* 卡片hover效果 - 灵动不卡顿 */
+/* 卡片hover效果：适配竖版模块，交互感更强 */
 .anime-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
+  transform: translateY(-10px); /* 上移效果更灵动 */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* 加深阴影提升层次感 */
 }
 
-/* 竖版封面图片样式 - 保证比例协调 */
+/* 动漫封面图：竖版核心 - 大幅提高高度，形成竖版视觉（高度远大于宽度） */
 .anime-card img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  display: block;
-  flex: 1;
-  transition: all 0.3s ease;
+  width: 100%; /* 宽度铺满卡片 */
+  height: 350px; /* 核心修改：大幅增加高度，实现竖版（高度远大于卡片宽度） */
+  object-fit: cover; /* 保持封面比例，不拉伸变形，裁剪多余部分 */
+  display: block; /* 消除图片下方空白 */
+  flex: 1; /* 让封面占满卡片大部分高度，强化竖版 */
 }
 
-.anime-card:hover img {
-  transform: scale(1.02); /* 轻微放大，提升视觉效果 */
-}
-
-/* 动漫名称文字样式 */
+/* 动漫名称文字：适配竖版模块，保持美观 */
 .anime-name {
-  padding: 18px 12px;
+  padding: 15px 10px; /* 合理内边距 */
   text-align: center;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 16px; /* 竖版模块文字略调整，避免过大 */
+  font-weight: 600; /* 加粗字体 */
   color: #2c3e50;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  background-color: #f8f9fa;
-  height: 55px;
+  background-color: #f8f8f8;
+  /* 固定文字区域高度，确保竖版卡片整齐 */
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid #eeeeee;
 }
 
-/* 视频播放弹窗样式 - 遮罩层 */
+/* 视频弹窗：适配竖版模块风格，保持视觉统一 */
 .video-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.92); /* 加深背景更聚焦视频 */
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
-  padding: 20px;
+  z-index: 999;
 }
 
-/* 弹窗内容容器 */
 .modal-content {
-  width: 100%;
-  max-width: 1600px;
+  width: 96%; /* 加大弹窗宽度 */
+  max-width: 1500px; /* 超大弹窗最大宽度 */
   position: relative;
 }
 
-/* 关闭按钮样式 */
 .close-btn {
   position: absolute;
-  top: -70px;
+  top: -60px; /* 上移按钮适配布局 */
   right: 0;
-  width: 52px;
-  height: 52px;
+  width: 48px; /* 放大关闭按钮 */
+  height: 48px;
   border: none;
   border-radius: 50%;
   background-color: #e74c3c;
-  color: #ffffff;
-  font-size: 30px;
+  color: #fff;
+  font-size: 28px; /* 放大按钮字体 */
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.2s ease;
-  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+  transition: background-color 0.2s ease;
 }
 
 .close-btn:hover {
-  background-color: #c0392b;
-  transform: scale(1.05);
+  background-color: #c0392b; /* 加深hover颜色 */
 }
 
-/* 弹窗标题样式 */
 .modal-anime-title {
-  color: #ffffff;
+  color: #fff;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.5rem;
+  margin-bottom: 25px; /* 加大间距 */
+  font-size: 2.2rem; /* 放大弹窗标题 */
   letter-spacing: 2px;
   font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* 视频播放容器 - 适配iframe，保证清晰流畅 */
+/* 全屏视频：适配整体风格，视觉震撼 */
 .fullscreen-video {
   width: 100%;
-  height: 88vh;
-  border-radius: 18px;
-  background-color: #000000;
-  border: none;
+  height: auto;
+  max-height: 90vh; /* 超大视频高度 */
+  border-radius: 15px; /* 圆角与卡片统一 */
+  background-color: #000;
+  object-fit: contain;
 }
 
-/* 响应式适配 - 不同设备自动调整布局 */
-@media (max-width: 1700px) {
+/* 响应式适配：不同屏幕下保持竖版模块形态，调整每行数量 */
+/* 大屏电脑（小于1600px）：一行4个，竖版形态不变 */
+@media (max-width: 1600px) {
   .anime-container {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 22px;
+    grid-gap: 18px;
   }
   .anime-card img {
-    height: 350px;
+    height: 320px; /* 略减高度，适配屏幕 */
   }
   .page-header h1 {
     font-size: 3.4rem;
   }
   .modal-anime-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
 
+/* 中屏电脑/平板横屏（小于1200px）：一行3个，竖版形态不变 */
 @media (max-width: 1200px) {
   .anime-container {
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 16px;
   }
   .anime-card img {
-    height: 320px;
+    height: 290px; /* 调整高度适配 */
   }
   .page-header h1 {
     font-size: 2.8rem;
@@ -205,31 +197,29 @@ html, body {
     font-size: 1.3rem;
   }
   .modal-anime-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .close-btn {
-    width: 48px;
-    height: 48px;
-    font-size: 28px;
-    top: -65px;
-  }
-  .fullscreen-video {
-    height: 82vh;
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
+    top: -55px;
   }
 }
 
+/* 平板竖屏/手机横屏（小于768px）：一行2个，竖版形态不变 */
 @media (max-width: 768px) {
   .anime-container {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 18px;
-    margin-bottom: 50px;
+    grid-gap: 15px;
+    padding: 0 15px 50px;
   }
   .anime-card img {
-    height: 280px;
+    height: 260px; /* 调整高度 */
   }
   .anime-name {
-    font-size: 15px;
-    height: 50px;
+    font-size: 14px;
+    height: 45px;
   }
   .page-header {
     padding: 45px 0;
@@ -241,28 +231,25 @@ html, body {
     width: 98%;
   }
   .modal-anime-title {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
+    font-size: 1.6rem;
   }
   .close-btn {
-    width: 44px;
-    height: 44px;
-    font-size: 26px;
-    top: -60px;
-  }
-  .fullscreen-video {
-    height: 75vh;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    top: -50px;
   }
 }
 
+/* 手机竖屏（小于480px）：一行1个，最大化展示竖版模块 */
 @media (max-width: 480px) {
   .anime-container {
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 15px;
-    margin-bottom: 40px;
+    grid-gap: 12px;
+    padding: 0 10px 40px;
   }
   .anime-card img {
-    height: 300px;
+    height: 280px; /* 保持竖版高度，美观展示 */
   }
   .page-header {
     padding: 35px 0;
@@ -274,21 +261,12 @@ html, body {
     font-size: 1.1rem;
   }
   .modal-anime-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-size: 1.4rem;
   }
   .close-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
-    top: -55px;
-    right: 10px;
-  }
-  .fullscreen-video {
-    height: 70vh;
-    border-radius: 12px;
-  }
-  .video-modal {
-    padding: 15px;
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+    top: -45px;
   }
 }
